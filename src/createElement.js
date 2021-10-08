@@ -9,7 +9,7 @@ function createSection() {
 	div1.classList = "container py-5 h-100";
 	div2.classList =
 		"row d-flex justify-content-center align-items-center h-100";
-	div3.classList = "col-md-8 col-lg-6 col-xl-4";
+	div3.classList = "col-md-8 col-lg-6 col-md-8";
 
 	div3.id = "div-container";
 
@@ -35,6 +35,7 @@ function createForm() {
 	input.type = "search";
 	input.classList = "form-control rounded";
 	input.placeholder = "City";
+	input.id = "cityInput";
 	const button = document.createElement("button");
 	button.classList = "input-group-text border-0 fw-bold";
 	button.id = "searchButton";
@@ -99,19 +100,20 @@ function createInfoCard() {
 	const location = document.createElement("h4");
 	location.classList = "mb-1 sfw-normal";
 	location.innerHTML = "New York, US"; // placeholder
-	location.id = "location";
+	location.id = "locationCard";
 
 	const currentTemperature = document.createElement("p");
 	currentTemperature.classList = "mb-2";
 	currentTemperature.innerHTML =
-		"Current Temperature: <strong> 10.44°C </strong>";
+		"Current Temperature: <strong id = 'currentTempCard'> --°C </strong>";
 
 	const feelsLikeTemp = document.createElement("p");
-	feelsLikeTemp.innerHTML = "Feels Like: <strong> 11.32°C </strong>";
+	feelsLikeTemp.innerHTML =
+		"Feels Like: <strong id = 'feelsLikeCard'> 11.32°C </strong>";
 
 	const maxMinTemp = document.createElement("p");
 	maxMinTemp.innerHTML =
-		"Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong>";
+		"Max: <strong id = 'maxTempCard'>6.11°C</strong>, Min: <strong id = 'minTempCard'>3.89°C</strong>";
 
 	const div2 = document.createElement("div");
 	div2.classList = "d-flex flex-row align-items-center";
@@ -119,6 +121,7 @@ function createInfoCard() {
 	const description = document.createElement("p");
 	description.classList = "mb-0 me-4";
 	description.textContent = "Scattered Clouds";
+	description.id = "descriptionCard";
 
 	//icon if you want
 
