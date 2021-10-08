@@ -139,4 +139,5 @@ function createElements() {
 	createForm();
 	createInfoCard();
 }
+
 export { createElements };

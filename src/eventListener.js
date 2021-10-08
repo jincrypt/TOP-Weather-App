@@ -1,3 +1,5 @@
+import { closeAlerts } from "./helperFunctions";
+
 const { weatherQuery } = require("./weatherFunctions");
 
 function submitButton() {
@@ -5,7 +7,7 @@ function submitButton() {
 	const celcius = document.querySelector("#inlineRadio1");
 	const farenheit = document.querySelector("#inlineRadio2");
 	const unit = celcius.checked ? celcius.value : farenheit.value;
-	console.log(unit);
+
 	if (city) {
 		weatherQuery(city, unit);
 	}
@@ -14,6 +16,7 @@ function submitButton() {
 function formEventListener() {
 	document.querySelector("form").addEventListener("submit", (e) => {
 		e.preventDefault();
+		closeAlerts();
 		submitButton();
 	});
 }

@@ -1,12 +1,6 @@
-const API_KEY = "240fee3fa5f7cc104f238c10a993a48b";
+import { titleCase } from "./helperFunctions";
 
-function titleCase(text) {
-	let split = text.toLowerCase().split(" ");
-	for (let i = 0; i < split.length; i++) {
-		split[i] = split[i][0].toUpperCase() + split[i].substring(1);
-	}
-	return split.join(" ");
-}
+const API_KEY = "240fee3fa5f7cc104f238c10a993a48b";
 
 const weatherQuery = async (city, unit) => {
 	const response = await fetch(
@@ -16,9 +10,8 @@ const weatherQuery = async (city, unit) => {
 	const weatherData = await response.json();
 
 	try {
-		console.log(unit);
 		unit = unit === "metric" ? " °C" : " °F";
-		console.log(unit);
+
 		const myData = {
 			currentTemp: weatherData.main.temp + unit,
 			feelsLike: weatherData.main.feels_like + unit,
@@ -29,7 +22,6 @@ const weatherQuery = async (city, unit) => {
 		};
 		updateCardSuccess(myData);
 	} catch (error) {
-		console.error(error);
 		updateCardError(weatherData.message);
 	}
 };
