@@ -1,6 +1,6 @@
 # Project: Weather App
 
-[Live Preview](https://jincrypt.github.io/TOP-Weather-App/)
+[Live Preview](https://mkaleung.github.io/TOP-Weather-App/)
 
 ## Criteria:
 * Function calls to Weather API of Choice (OpenWeatherMap chosen)
